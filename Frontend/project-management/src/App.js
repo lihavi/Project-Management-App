@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -7,8 +7,10 @@ const App = () => {
     <BrowserRouter>
       <div>
         <Navbar/>
-        <Route exact path="/" component={Home}/>
-        <Route path="/projects" component={Projects}/>
+        <Routes>
+        <Route exact path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
