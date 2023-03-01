@@ -8,6 +8,9 @@ use Rack::Cors do
   end
 end
 
+# Authentication middleware to verify user authentication on protected routes
+use AuthenticationMiddleware
+
 # Parse JSON from the request body into the params hash
 use Rack::JSONBodyParser
 
